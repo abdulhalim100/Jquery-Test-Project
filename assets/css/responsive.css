@@ -1,0 +1,266 @@
+@media screen and (max-width: 1400px) {
+}
+
+/* Scree Size 1200 Section Close============================================================================================================ */
+
+@media screen and (max-width: 1200px) {
+  .nav-content ul {
+    gap: 25px;
+  }
+
+  .hero-title h1 {
+    font-size: 43px;
+  }
+
+  .hero-para p {
+    width: 85%;
+  }
+
+  .section-title h1,
+  .counter h2 {
+    font-size: 48px;
+  }
+
+  .count-wrapper {
+    width: 92%;
+    padding: 80px 0;
+  }
+  .col-md-7.content-side {
+    padding-right: 1%;
+  }
+  .chose-content.row {
+    margin-top: 57px;
+  }
+  .chose {
+    padding: 100px 0;
+  }
+  .chose-image {
+    padding: 2% 0 2% 2%;
+  }
+  .question-wrapper h1 {
+    font-size: 50px;
+  }
+  .survey {
+    padding: 70px 0;
+  }
+}
+
+/* Scree Size 992 Section Close============================================================================================================ */
+
+@media screen and (max-width: 992px) {
+  .nav-content {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+  .nav-btn button {
+    padding: 8px 32px;
+  }
+
+  .hero-title h1 {
+    font-size: 30px;
+  }
+
+  .hero-para p {
+    width: 100%;
+    margin: 30px 0 50px 0;
+  }
+
+  .section-title h1,
+  .counter h2 {
+    font-size: 38px;
+    margin-bottom: 23px;
+  }
+
+  .count-wrapper {
+    width: 100%;
+    padding: 60px 0;
+  }
+
+  .border-line {
+    margin: 40px 0 80px 0;
+  }
+  .col-md-7.content-side {
+    padding-right: 0%;
+  }
+  .chose-content.row {
+    margin-top: 40px;
+  }
+  .chose {
+    padding: 80px 0;
+  }
+  .chose-image {
+    padding: 4% 0 4% 4%;
+  }
+  .footer {
+    padding: 60px 0;
+  }
+  .footer-title-content h1 {
+    font-size: 28px;
+  }
+  .question {
+    padding: 60px 0;
+  }
+  .question-wrapper h1 {
+    font-size: 40px;
+  }
+  .question-wrapper p {
+    font-size: 16px;
+    width: 74%;
+  }
+  .question-content {
+    padding: 70px 0;
+  }
+  .survey {
+    padding: 50px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .custom-btn button {
+    display: block;
+    margin: auto;
+  }
+
+  body {
+    text-align: center;
+  }
+
+  .hero-wrapper {
+    gap: 70px;
+  }
+
+  .logo-list {
+    margin-top: 46px;
+  }
+
+  .section-title h1,
+  .counter h2 {
+    font-size: 29px;
+    margin-bottom: 15px;
+  }
+
+  .count-wrapper {
+    padding: 20px 0;
+  }
+
+  .border-line {
+    margin: 40px 0 65px 0;
+  }
+
+  .border-view:before {
+    bottom: -20%;
+  }
+  .title {
+    text-align: center !important;
+  }
+  .col-md-7.content-side {
+    padding-right: 8%;
+  }
+  .chose-content.row {
+    margin-top: 70px;
+  }
+  .chose {
+    padding: 30px 0;
+  }
+  .chose-image {
+    padding: 8% 8% 8% 8%;
+  }
+  .sales-wrapper.row {
+    gap: 50px;
+  }
+  .sales {
+    padding: 40px 0;
+  }
+  .footer-title-content h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .footer-title-btn button {
+    margin-left: 0;
+  }
+  .content-title p {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-title {
+    margin-bottom: 70px;
+  }
+  .footer-title:before {
+    bottom: -35px;
+  }
+  .social-media {
+    margin-bottom: 40px;
+  }
+  .question {
+    padding: 50px 0;
+  }
+  .question-wrapper h1 {
+    font-size: 25px;
+  }
+  .question-wrapper p {
+    font-size: 14px;
+    width: 100%;
+  }
+  .start-btn {
+    padding: 22px 0;
+    margin-top: 45px;
+  }
+  .survey {
+    padding: 30px 0;
+  }
+}
+
+/* Scree Size 576 Section Close============================================================================================================ */
+
+@media screen and (max-width: 576px) {
+  .hero {
+    padding: 30px 0 30px 0;
+  }
+
+  .section-title h1,
+  .counter h2 {
+    font-size: 22px;
+    margin-bottom: 13px;
+  }
+
+  .border-line {
+    margin: 40px 0 50px 0;
+  }
+  .border-view:before {
+    bottom: -8%;
+  }
+  .chose-content.row {
+    margin-top: 50px;
+  }
+  .chose {
+    padding: 20px 0;
+  }
+  .sales {
+    padding: 20px 0;
+  }
+  .footer-title-content h1 {
+    font-size: 25px;
+  }
+  .content-title {
+    margin-bottom: 35px;
+  }
+  .content-title h3 {
+    margin-bottom: 15px;
+  }
+  li.footer-link {
+    margin-bottom: 5px;
+  }
+  .question {
+    padding: 40px 0;
+  }
+  .question-wrapper h1 {
+    font-size: 26px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Move with 10x Opacity Blink</title>
+    <style>
+      .one {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: rotateInfinitely 2s linear infinite;
+        opacity: 1;
+      }
+
+      @keyframes rotateInfinitely {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="one"></div>
+
+    <script>
+      $(document).ready(function () {
+        function blinkOpacityNTimes($el, times, interval, callback) {
+          let count = 0;
+          let blink = setInterval(function () {
+            $el.css("opacity", $el.css("opacity") == 1 ? 0.2 : 1);
+            count++;
+            if (count >= times) {
+              clearInterval(blink);
+              if (callback) callback();
+            }
+          }, interval);
+        }
+
+        function animateAll() {
+          blinkOpacityNTimes($(".one"), 10, 100, function () {});
+
+          // প্রথম ধাপে: left move + blink 10 বার
+          $(".one").animate({ left: "500px" }, 1000);
+          $(".one").animate({ top: "300px" }, 1000, function () {
+            // তৃতীয় ধাপ: আবার বামে ফেরা
+            $(".one").animate({ left: "0px" }, 1000, function () {
+              // চতুর্থ ধাপ: উপরে ওঠা
+              $(".one").animate({ top: "0px" }, 1000, animateAll); // আবার শুরু
+            });
+          });
+        }
+
+        animateAll(); // সবকিছু শুরু
+      });
+    </script>
+  </body>
+</html>
