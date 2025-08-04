@@ -1,63 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Move with 10x Opacity Blink</title>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Demo styles -->
     <style>
-      .one {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-        position: absolute;
-        top: 0;
-        left: 0;
-        animation: rotateInfinitely 2s linear infinite;
-        opacity: 1;
+      html,
+      body {
+        background-color: #444;
+        margin: 0;
+        padding: 0;
       }
 
-      @keyframes rotateInfinitely {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        height: 650px;
+        overflow: hidden;
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        display: block;
+      }
+      .swiper {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .container {
+        width: 800px;
+        margin: auto;
+        margin-top: 300px;
+      }
+
+      .swiper-pagination {
+        bottom: -29px !important;
+        margin: 51px 0;
+        position: static;
+        width: 34% !important;
+      }
+      span.swiper-pagination-bullet {
+        background: aqua;
+        width: 25px;
+        height: 25px;
+      }
+
+      span.swiper-pagination-bullet-active {
+        background: blueviolet;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        top: 92%;
+        padding: 6px 15px;
+        border-radius: 100px;
+        background: #fff;
+        color: #000;
+        font-size: 30px;
+      }
+      .swiper-button-prev {
+        left: 81% !important;
+      }
+      .swiper-button-next:after {
+        display: none;
+      }
+      .swiper-button-prev:after {
+        display: none;
       }
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
+
   <body>
-    <div class="one"></div>
+    <!-- Swiper -->
+    <div class="container">
+      <div class="sw-wrapper">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets/img/Image.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/5.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/Image.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/5.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/Image.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/5.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/Image.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/5.png" alt="" />
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-button-next">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!-- Initialize Swiper -->
     <script>
-      $(document).ready(function () {
-        function blinkOpacityNTimes($el, times, interval, callback) {
-          let count = 0;
-          let blink = setInterval(function () {
-            $el.css("opacity", $el.css("opacity") == 1 ? 0.2 : 1);
-            count++;
-            if (count >= times) {
-              clearInterval(blink);
-              if (callback) callback();
-            }
-          }, interval);
-        }
-
-        function animateAll() {
-          blinkOpacityNTimes($(".one"), 10, 100, function () {});
-
-          // প্রথম ধাপে: left move + blink 10 বার
-          $(".one").animate({ left: "500px" }, 1000);
-          $(".one").animate({ top: "300px" }, 1000, function () {
-            // তৃতীয় ধাপ: আবার বামে ফেরা
-            $(".one").animate({ left: "0px" }, 1000, function () {
-              // চতুর্থ ধাপ: উপরে ওঠা
-              $(".one").animate({ top: "0px" }, 1000, animateAll); // আবার শুরু
-            });
-          });
-        }
-
-        animateAll(); // সবকিছু শুরু
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        effect: "slide",
+        speed: 1500,
+        grabCursor: true,
+        loop: true,
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
       });
     </script>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- Code injected by live-server -->
   </body>
 </html>
